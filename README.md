@@ -1,19 +1,19 @@
 # falcon-test
-1. HOW TO RUN ------------------------------------------------------------------------
+## How to run
 - Run "node app.js" from the root
 - Open the index.html file from the browser
 
 
 
-2. STRUCTURE --------------------------------------------------------------------------
+## Structure
 
 On the client side (written with AngularJS and stored in the app/ folder) there are:
 - one service/factory
 	- services/itemsFactory
-- 2 controllers:
+- two controllers:
 	- controllers/itemsControllers (for the list)
 	- controllers/itemController (for the single element)
-- 2 partials:
+- two partials:
 	- partials/items.html
 	- partials/item.html
 	
@@ -47,7 +47,7 @@ This is an example of how the list page is rendered with its data:
 
 
 
-3. KNOWN ISSUES / REFLECTIONS --------------------------------------------------------------------------
+## Known issues / reflections
 
 - There should be a validation on the items, especially on the id that has to be unique 
 (otherwise the server will update only the first element that it finds in the list)
