@@ -1,0 +1,21 @@
+<div class="items contents">
+    <h2>Items</h2>
+    
+    <div class="align-right">
+        id: 
+        <input type="text" data-ng-model="newItemId" />
+        <button class="edit-button" data-ng-click="addItem()">Create new item</a>
+    </div>
+    
+    <div class="error-message">{{ errorMessage }}</div>
+    <div class="confirm-message">{{ confirmMessage }}</div>
+    
+    <ul>
+        <li data-ng-repeat="item in items">
+            <span>{{ item.id }} ({{ item.status }})</span>
+            <a class="edit-button" href="#/item/{{ item.id }}">edit</a>
+            <a class="remove-button" href="#/" data-ng-click="removeItem(item.id)">delete</a>
+        </li>
+    </ul>
+    
+</div>

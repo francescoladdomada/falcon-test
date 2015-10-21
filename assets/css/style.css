@@ -1,0 +1,91 @@
+body {
+	font-family: "Arial";
+	font-size: 13px;
+}
+.error-message {
+	color: red;
+	padding: 10px;
+}
+.confirm-message {
+	color: green;
+	padding: 10px;
+}
+.wrapper {
+	width: 640px;
+	margin: auto;
+	background: #eee;
+	padding: 15px 30px;
+}
+div.input-row {
+	padding: 10px;
+}
+div.sub-section {
+	background: #ddd;
+	margin: 0px 0px 20px 0px;
+}
+div.input-row label {
+	float: left;
+	width: 170px;
+	text-align: right;
+	padding-top: 4px;
+}
+input {
+	width: 200px;
+	font-family: "Arial";
+	font-size: 13px;
+}
+fieldset {
+	margin-bottom: 20px;
+}
+button, .button, .edit-button, .remove-button {
+	background: #ff612a;
+	padding: 10px 20px;
+	font-size: 21px;
+	border: 0px;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.new-element-form {
+	background: #ccc;
+	border: 3px solid #fff;
+}
+.new-element-form button, .edit-button, .remove-button {
+	padding: 5px 10px;
+	font-size: 13px;
+}
+.remove-button {
+	background: #555;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+.right-column {
+	margin-left: 180px;
+}
+.clear {
+	clear: both;
+}
+.hidden {
+	display: none;
+}
+ul {
+	margin-top: 30px;
+	padding: 0px;
+}
+li {
+	list-style-type: none;
+	background: white;
+	padding: 15px;
+	font-size: 16px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+li span {
+	width: 500px;
+	display: inline-block;
+}

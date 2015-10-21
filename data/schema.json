@@ -1,0 +1,24 @@
+{
+	"id": null,
+	"content": {
+		"message": null,
+		"id": null,
+		"network": null,
+		"postType": null,
+		"media": {
+			"filename": null,
+			"fileUrl": null,
+			"url": null
+		}
+	},
+	"tags": [],
+	"status": null,
+	"channels": [{"name": null, "id": null}],
+	"scheduled": null,
+	"geo": {
+		"countries": [{"value": null, "key": null}],
+		"languages": [{"value": null, "key": null}],
+		"cities": [],
+		"regions": []
+	}
+}

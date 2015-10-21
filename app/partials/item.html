@@ -1,0 +1,303 @@
+<div class="item contents">
+    <a href="#/">&laquo; back to list</a>
+    
+    <h2>Edit &quot;{{ item.id }}&quot;</h2>
+
+    
+    <div class="input-row hidden">
+        <label>Id</label>
+        <div class="right-column">
+            <input type="hidden" data-ng-model="item.id" />
+        </div>
+    </div>
+    
+    <div class="input-row">
+        <label>Status</label>
+        <div class="right-column">
+            <input type="text" data-ng-model="item.status" />
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="input-row">
+        <label>Scheduled</label>
+        <div class="right-column">
+            <input type="text" data-ng-model="item.scheduled" />
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="sub-section content">
+        <div class="input-row">
+            <label>Message</label>
+            <div class="right-column">
+                <input type="text" data-ng-model="item.content.message" />
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="input-row">
+            <label>Network</label>
+            <div class="right-column">
+                <input type="text" data-ng-model="item.content.network" />
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="input-row">
+            <label>Post type</label>
+            <div class="right-column">
+                <input type="text" data-ng-model="item.content.postType" />
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="sub-section media">
+            <div class="input-row">
+                <label>Media file name</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="item.content.media.fileName" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="input-row">
+                <label>Media file url</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="item.content.media.fileUrl" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="input-row">
+                <label>Media url</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="item.content.media.url" />
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- closes media -->
+        
+    </div> <!-- closes content -->
+    
+    
+    <fieldset>
+        <legend>Tags</legend>
+        <div class="sub-section tags" data-ng-repeat="tag in item.tags">
+            <div class="input-row">
+                <label>Tag #{{$index +1}}</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="tag" />
+                    <button class="remove-button" data-ng-click="removeTag(tag)">Remove tag</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="new-element-form input-row">
+            <label>New tag:</label>
+            <div class="right-column">
+                <input type="text" data-ng-model="newTag" />
+                <button data-ng-click="addTag()">Add tag</button>
+            </div>
+        </div>
+    </fieldset>
+    
+    
+    <fieldset>
+        <legend>Channels</legend>
+        <div class="sub-section channels" data-ng-repeat="channel in item.channels">
+            <div class="input-row">
+                <label>Channel name #{{$index +1}}</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="channel.name" />
+                    <button class="remove-button" data-ng-click="removeChannel(channel)">Remove channel</button>
+                    
+                </div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="input-row">
+                <label>Channel id #{{$index +1}}</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="channel.id" />
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- closes channels -->
+        
+        <div class="new-element-form">
+            <div class="input-row">
+                <label>New channel name</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="newChannel.name" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="input-row">
+                <label>New channel id</label>
+                <div class="right-column">
+                    <input type="text" data-ng-model="newChannel.id" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="input-row">
+                <label></label>
+                <div class="right-column">
+                    <button data-ng-click="addChannel()">Add new channel</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+    </fieldset>
+    
+    <div class="geo">
+        <fieldset>
+            <legend>Geo</legend>
+            <fieldset>
+                 <legend>Countries</legend>
+                 <div class="sub-section countries" data-ng-repeat="country in item.geo.countries">
+                     <div class="input-row">
+                         <label>Geo country value #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="country.value" />
+                             <button class="remove-button" data-ng-click="removeCountry(country)">Remove country</button>
+                             
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+
+                     <div class="input-row">
+                         <label>Geo country key #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="country.key" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div> <!-- closes countries -->
+                 <div class="new-element-form">
+                     <div class="input-row">
+                         <label>New country value</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="newCountry.value" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                     <div class="input-row">
+                         <label>New country key</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="newCountry.key" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                     <div class="input-row">
+                         <label></label>
+                         <div class="right-column">
+                             <button data-ng-click="addCountry()">Add new country</button>
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div>
+             </fieldset>
+
+             <fieldset>
+                 <legend>Languages</legend>
+                 <div class="sub-section languages" data-ng-repeat="language in item.geo.languages">
+                     <div class="input-row">
+                         <label>Geo language value #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="language.value" />
+                             <button class="remove-button" data-ng-click="removeLanguage(language)">Remove language</button>
+                             
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+
+                     <div class="input-row">
+                         <label>Geo language key #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="language.key" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div> <!-- closes languages -->
+                 <div class="new-element-form">
+                     <div class="input-row">
+                         <label>New language value</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="newLanguage.value" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                     <div class="input-row">
+                         <label>New language key</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="newLanguage.key" />
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                     <div class="input-row">
+                         <label></label>
+                         <div class="right-column">
+                             <button data-ng-click="addLanguage()">Add new language</button>
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div>
+             </fieldset>
+
+             <fieldset>
+                 <legend>Cities</legend>
+                 <div class="sub-section cities" data-ng-repeat="city in item.geo.cities">
+                     <div class="input-row">
+                         <label>Geo city #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="city" />
+                             <button class="remove-button" data-ng-click="removeCity(city)">Remove city</button>
+                             
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div> <!-- closes cities -->
+                 <div class="new-element-form input-row">
+                     <label>New city:</label>
+                     <div class="right-column">
+                         <input type="text" data-ng-model="newCity" />
+                         <button data-ng-click="addCity()">Add city</button>
+                     </div>
+                 </div>
+             </fieldset>
+
+
+             <fieldset>
+                 <legend>Regions</legend>
+                 <div class="sub-section cities" data-ng-repeat="region in item.geo.regions">
+                     <div class="input-row">
+                         <label>Geo region #{{$index +1}}</label>
+                         <div class="right-column">
+                             <input type="text" data-ng-model="region" />
+                             <button class="remove-button" data-ng-click="removeRegion(region)">Remove region</button>
+                             
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div> <!-- closes regions -->
+                 <div class="new-element-form input-row">
+                     <label>New region:</label>
+                     <div class="right-column">
+                         <input type="text" data-ng-model="newRegion" />
+                         <button data-ng-click="addRegion()">Add region</button>
+                     </div>
+                 </div>
+             </fieldset>
+            
+        </fieldset>
+     </div> <!-- closes geo -->
+    
+    <br>
+
+
+    <button data-ng-click="editItem()">Update</button>
+
+	<div class="confirm-message">{{ confirmMessage }}</div>
+	<div class="error-message">{{ errorMessage }}</div>
+	
+</div>
