@@ -38,12 +38,13 @@ written/sent by the user.
 
 
 This is an example of how the list page is rendered with its data:
-1 - The controller itemsController calls from the itemsFactory service the asynchronous function getItems()
-2 - The factory makes a POST request (without parameters) to the server through $http and generating a promise.
-3 - The server reads the json file and returns it to the client
-4 - When the data returns to the client, the promise is fullfilled and the controller can make his next step (storing the information inside the scope)
-5 - If the data is not returned and/or the promise is not fullfilled, the controller updates the error message in the scope
-6 - The scope is rendered in the partial of that controller
+
+- The controller itemsController calls from the itemsFactory service the asynchronous function getItems()
+- The factory makes a POST request (without parameters) to the server through $http and generating a promise.
+- The server reads the json file and returns it to the client
+- When the data returns to the client, the promise is fullfilled and the controller can make his next step (storing the information inside the scope)
+- If the data is not returned and/or the promise is not fullfilled, the controller updates the error message in the scope
+- The scope is rendered in the partial of that controller
 
 
 
